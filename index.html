@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/page/home_page.css" />
     <link rel="stylesheet" href="./style/shared/header.css" />
     <title>SHOP.CO</title>
   </head>
@@ -11,12 +12,36 @@
       <section class="top-bar">
         <p>
           Sign up and get 20% off to your first order.
-          <a href="#">Sign Up Now</a>
+          <button id="sing-up-btn" style="color: white; text-decoration: underline;">Sign Up Now</button>
         </p>
         <button class="close-button">✕</button>
       </section>
 
       <section class="main-header">
+        <div class="burger-menue" onclick="burgerMenue(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <nav class="navigation-burger-menu">
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Services</li>
+              <li>
+                Shop<select name="Shop" id="Shop">
+                <option value=""><li></li></option>
+                <option value="About Company"><li>About Company</li></option>
+                <option value="Payment Gateway">Payment Gateway</option>
+                <option value="Terms & Conditions">
+                  <li>Terms & Conditions</li>
+                </option>
+                <option value="Testimonials"><li>Testimonials</li></option>
+              </li>
+            </select>
+              <a><li>Sign Up Now</li></a>
+            </ul>
+          </nav>
+        </div>
         <section class="logo">
           <a href="#"><img src="./images/logo.png" alt="Shop Logo" /></a>
         </section>
@@ -32,17 +57,55 @@
 
         <section class="search-cart-profile">
           <section class="search-box">
-            <button><img src="./images/serch_icon.png" alt="search"></button>
+            <button><img src="./images/serch_icon.png" alt="search" /></button>
             <input type="text" placeholder="Search for products..." />
           </section>
-          
-        </section>
-        <section class="icons">
-          <a href="#"><img src="./images/basket_icon.png" alt="Basket"></i></a>
-          <a href="#"><img src="./images/person_icon.png" alt="person"></i></a>
         </section>
 
+        <section class="icons">
+          <a href="#"><img src="./images/basket_icon.png" alt="Basket" /></a>
+          <a href="#"><img src="./images/person_icon.png" alt="person" /></a>
+        </section>
       </section>
     </header>
+    <main>
+      <section class="hero">
+        <section class="hero-content">
+          <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+          <p>
+            Browse through our diverse range of meticulously crafted garments,
+            designed to bring out your individuality and cater to your sense of
+            style.
+          </p>
+          <button class="shop-btn">Shop Now</button>
+          <section class="hero-stats">
+            <section class="stat">
+              <h2>200+</h2>
+              <p>International Brands</p>
+            </section>
+            <span class="separator"></span>
+            <section class="stat">
+              <h2>2,000+</h2>
+              <p>High-Quality Products</p>
+            </section>
+            <span class="separator"></span>
+            <section class="stat">
+              <h2>30,000+</h2>
+              <p>Happy Customers</p>
+            </section>
+          </section>
+        </section>
+        <section class="hero-image">
+          <img src="./images/big_star.png" alt="Star" class="star star-top" />
+          <img
+            src="./images/smal_star.png"
+            alt="Star"
+            class="star star-middle"
+          />
+        </section>
+      </section>
+    </main>
+
+    <script src="./js/burgerMenue.js"></script>
   </body>
 </html>
