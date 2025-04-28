@@ -12,36 +12,46 @@
       <section class="top-bar">
         <p>
           Sign up and get 20% off to your first order.
-          <button id="sing-up-btn" style="color: white; text-decoration: underline;">Sign Up Now</button>
+          <button
+            id="sing-up-btn"
+            style="color: white; text-decoration: underline"
+          >
+            Sign Up Now
+          </button>
         </p>
         <button class="close-button">✕</button>
       </section>
 
       <section class="main-header">
-        <div class="burger-menue" onclick="burgerMenue(this)">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-          <nav class="navigation-burger-menu">
-            <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>
-                Shop<select name="Shop" id="Shop">
-                <option value=""><li></li></option>
-                <option value="About Company"><li>About Company</li></option>
-                <option value="Payment Gateway">Payment Gateway</option>
-                <option value="Terms & Conditions">
-                  <li>Terms & Conditions</li>
-                </option>
-                <option value="Testimonials"><li>Testimonials</li></option>
-              </li>
-            </select>
-              <a><li>Sign Up Now</li></a>
-            </ul>
-          </nav>
+        <div class="burger-menu" onclick="openMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
         </div>
+
+        <div class="side-menu" id="sideMenu">
+          <button class="close-btn" onclick="closeMenu()">✕</button>
+          <ul class="menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li class="dropdown">
+              <div onclick="toggleDropdown()" class="dropdown-toggle">
+                Shop <span class="arrow">▾</span>
+              </div>
+              <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">About Company</a></li>
+                <li><a href="#">Payment Gateway</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Testimonials</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Testimonials</a></li>
+          </ul>
+          <button class="signup-btn">Sign Up Now</button>
+        </div>
+
         <section class="logo">
           <a href="#"><img src="./images/logo.png" alt="Shop Logo" /></a>
         </section>
@@ -88,7 +98,7 @@
               <h2>2,000+</h2>
               <p>High-Quality Products</p>
             </section>
-            <span class="separator"></span>
+            <span class="separator  nan"></span>
             <section class="stat">
               <h2>30,000+</h2>
               <p>Happy Customers</p>
@@ -96,12 +106,22 @@
           </section>
         </section>
         <section class="hero-image">
-          <img src="./images/big_star.png" alt="Star" class="star star-top" />
+          <img src="./images/big_star.png" alt="Star" class="main-star star-top" />
           <img
             src="./images/smal_star.png"
             alt="Star"
-            class="star star-middle"
+            class="main-star star-middle"
           />
+        </section>
+      </section>
+      <!--- brend section -->
+      <section class="brands-section">
+        <section class="brend scroller__inner">
+          <img src="./images/versache-logo.png" alt="versache" />
+          <img src="./images/zara-logo.png" alt="zara" />
+          <img src="./images/gucci-logo.png" alt="gucci" />
+          <img src="./images/prada-logo.png" alt="prada" />
+          <img src="./images/calvin-klain-logo.png" alt="calvin-klain" />
         </section>
       </section>
     </main>

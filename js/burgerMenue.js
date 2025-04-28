@@ -1,8 +1,15 @@
-function burgerMenue(x) {
+// Burger Menu Functionality
+function openMenu() {
+  document.getElementById("sideMenu").classList.add("open");
+}
 
-  x.classList.toggle("change");
-  if(x){
-    document.querySelector('.navigation-burger-menu').classList.toggle('active');
-  }
-  
-};
+function closeMenu() {
+  document.getElementById("sideMenu").classList.remove("open");
+}
+
+function toggleDropdown() {
+  const dropdown = document.getElementById("dropdownMenu");
+  const toggle = document.querySelector(".dropdown-toggle");
+  dropdown.classList.toggle("open");
+  toggle.classList.toggle("open");
+}
