@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link rel="stylesheet" href="./style/shared/main.css" />
+    <title>SHOP.CO</title>
+  </head>
+  <body>
+    <header>
+      <section class="top-bar">
+        <p>
+          Sign up and get 20% off to your first order.
+          <button
+            id="sing-up-btn"
+            style="color: white; text-decoration: underline"
+          >
+            Sign Up Now
+          </button>
+        </p>
+        <button class="close-button">✕</button>
+      </section>
+
+      <section class="main-header">
+        <div class="burger-menu" onclick="openMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="side-menu" id="sideMenu">
+          <button class="close-btn" onclick="closeMenu()">✕</button>
+          <ul class="menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li class="dropdown">
+              <div onclick="toggleDropdown()" class="dropdown-toggle">
+                Shop <span class="arrow">▾</span>
+              </div>
+              <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">About Company</a></li>
+                <li><a href="#">Payment Gateway</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Testimonials</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Testimonials</a></li>
+          </ul>
+          <button class="signup-btn">Sign Up Now</button>
+        </div>
+
+        <section class="logo">
+          <a href="./index.html"><img src="./images/logo.png" alt="Shop Logo" /></a>
+        </section>
+
+        <nav class="navigation">
+          <ul>
+            <li>Shop<select name="Shop" id="Shop"></select></li>
+            <li><a href="#">On Sale</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#scroller">Brands</a></li>
+          </ul>
+        </nav>
+
+        <section class="search-cart-profile">
+          <section class="search-box">
+            <button><img src="./images/serch_icon.png" alt="search" /></button>
+            <input type="text" placeholder="Search for products..." />
+          </section>
+        </section>
+
+        <section class="icons">
+          <a href="#"><img src="./images/basket_icon.png" alt="Basket" /></a>
+          <a href="#"><img src="./images/person_icon.png" alt="person" /></a>
+        </section>
+      </section>
+    </header>
+    <h1>heloo</h1>
+
+    
+    <script src="./js/shared/shared.js"></script>
+    
+  </body>
+</html>

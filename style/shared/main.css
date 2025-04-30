@@ -5,14 +5,20 @@
   box-sizing: border-box;
 }
 
-body {
+html,body {
   font-family: "Arial", sans-serif;
+  overflow-x: hidden;
 }
+
 
 button {
   cursor: pointer;
   border: none;
   background: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Burger Menu */

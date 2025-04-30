@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/page/home_page.css" />
-    <link rel="stylesheet" href="./style/shared/header.css" />
+    <link rel="stylesheet" href="./style/shared/main.css" />
     <title>SHOP.CO</title>
   </head>
   <body>
@@ -16,7 +16,7 @@
             id="sing-up-btn"
             style="color: white; text-decoration: underline"
           >
-            Sign Up Now
+            <a href="./registration.html"> Sign Up Now </a>
           </button>
         </p>
         <button class="close-button">✕</button>
@@ -49,7 +49,9 @@
             </li>
             <li><a href="#">Testimonials</a></li>
           </ul>
-          <button class="signup-btn">Sign Up Now</button>
+          <button class="signup-btn">
+            <a href="./registration.html"> Sign Up Now </a>
+          </button>
         </div>
 
         <section class="logo">
@@ -61,7 +63,7 @@
             <li>Shop<select name="Shop" id="Shop"></select></li>
             <li><a href="#">On Sale</a></li>
             <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Brands</a></li>
+            <li><a href="#scroller">Brands</a></li>
           </ul>
         </nav>
 
@@ -120,7 +122,12 @@
       </section>
       <!--- brend section -->
 
-      <section class="scroller" data-direction="right" data-speed="slow">
+      <section
+        class="scroller"
+        data-direction="right"
+        data-speed="fast"
+        id="scroller"
+      >
         <section class="scroller__inner">
           <img src="./images/versache-logo.png" alt="versache" />
           <img src="./images/zara-logo.png" alt="zara" />
@@ -134,8 +141,90 @@
           <img src="./images/calvin-klain-logo.png" alt="calvin-klain" />
         </section>
       </section>
-    </main>
+      <!--New Arrivals section--->
+      <section class="new-arrivals-container">
+        <h2>NEW ARRIVALS</h2>
+        <section class="new-arrivals-wrapper">
+          <div class="product-container">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="./images/main-page-img/image 10.png"
+              />
+            </div>
 
+            <div class="product-name limit-text-to-2-lines">
+              T-shirt with Tape Details
+            </div>
+
+            <div class="product-rating-container">
+              <img
+                class="product-rating-stars"
+                src="./images/ratings/rating-45.png"
+              />
+              <div class="product-rating-count">4.5/5</div>
+            </div>
+
+            <div class="product-price">$120</div>
+          </div>
+
+          <div class="product-container">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="./images/main-page-img/image9.png"
+              />
+            </div>
+
+            <div class="product-name limit-text-to-2-lines">
+              Skinny Fit Jeans
+            </div>
+
+            <div class="product-rating-container">
+              <img
+                class="product-rating-stars"
+                src="./images/ratings/rating-35.png"
+              />
+              <div class="product-rating-count">3.5/5</div>
+            </div>
+
+            <div class="product-price">
+              <span class="discounted-price">$240</span>
+              <span class="old-price">$260</span>
+              <span class="discount-tag">-20%</span>
+            </div>
+          </div>
+          <div class="product-container">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="./images/main-page-img/image9.png"
+              />
+            </div>
+
+            <div class="product-name limit-text-to-2-lines">
+              Skinny Fit Jeans
+            </div>
+
+            <div class="product-rating-container">
+              <img
+                class="product-rating-stars"
+                src="./images/ratings/rating-35.png"
+              />
+              <div class="product-rating-count">3.5/5</div>
+            </div>
+
+            <div class="product-price">
+              <span class="discounted-price">$240</span>
+              <span class="old-price">$260</span>
+              <span class="discount-tag">-20%</span>
+            </div>
+          </div>
+        </section>
+        <button class="view-all-button">View All</button>
+      </section>
+    </main>
+    <script src="./js/shared/shared.js"></script>
     <script src="./js/mainPage.js"></script>
   </body>
 </html>

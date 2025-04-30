@@ -1,18 +1,3 @@
-// Burger Menu Functionality
-function openMenu() {
-  document.getElementById("sideMenu").classList.add("open");
-}
-
-function closeMenu() {
-  document.getElementById("sideMenu").classList.remove("open");
-}
-
-function toggleDropdown() {
-  const dropdown = document.getElementById("dropdownMenu");
-  const toggle = document.querySelector(".dropdown-toggle");
-  dropdown.classList.toggle("open");
-  toggle.classList.toggle("open");
-}
 
 const scrollers = document.querySelectorAll(".scroller");
 
@@ -30,9 +15,7 @@ function addAnimation() {
     const scrollerInner = scroller.querySelector(".scroller__inner");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
+    // Remove the first element from the array and add it to the end of the array
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
@@ -40,3 +23,5 @@ function addAnimation() {
     });
   });
 }
+
+
