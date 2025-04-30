@@ -150,32 +150,27 @@
   box-sizing: border-box;
 }
 
-
 /* Grid Layout */
 .new-arrivals-wrapper {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px;
+  padding: 0 200px 10px;
 }
 
 .product-container {
-  min-width: 250px; /* ან 280px ან რაც შენთვის ოპტიმალურია */
+  min-width: 250px;
   flex: 0 0 auto;
   scroll-snap-align: start;
-
   background: rgba(240, 238, 237, 1);
   border-radius: 18px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   padding: 16px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
 }
-
 
 .product-container:hover {
   transform: translateY(-4px);
@@ -209,7 +204,6 @@
 .product-rating-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
   margin-bottom: 12px;
 }
@@ -255,13 +249,11 @@
   vertical-align: middle;
 }
 
-
-
 /* Optional: "View All" Button */
 .view-all-button {
   display: block;
   width: 200px;
-  margin: 40px auto 0;
+  margin: 36px auto 0;
   padding: 12px 20px;
   font-size: 15px;
   font-weight: 600;
@@ -305,6 +297,7 @@
 
   .hero-content p {
     font-size: 14px;
+    color: #141313;
   }
 
   .shop-btn {
