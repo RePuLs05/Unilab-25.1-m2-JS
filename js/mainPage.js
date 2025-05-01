@@ -31,7 +31,7 @@ const products = [
     rating: 3.5,
     priceCent: 240,
     oldPrice: 260,
-    discount: 60,
+    discount: 20,
   },
   {
     img: "./images/main-page-img/CHECKERED SHIRT.png",
@@ -92,8 +92,11 @@ products.forEach((product) => {
 
   productHtml += `</div>`;
 });
-console.log(productHtml);
+
 
 document.querySelectorAll(".js-products-container").forEach((container) => {
   container.innerHTML = productHtml;
 });
+
+
+
