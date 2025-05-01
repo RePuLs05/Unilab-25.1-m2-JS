@@ -324,6 +324,7 @@
   text-align: center;
   padding: 60px 20px;
   background-color: #fff;
+  margin-bottom: 80px;
 }
 
 .costumer-comment h2 {
@@ -384,7 +385,7 @@
 }
 
 .customer-review {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   margin-bottom: 15px;
 }
@@ -500,9 +501,7 @@
     width: 40px;
     height: 40px;
   }
-  .close-button {
-    display: none;
-  }
+  
   .dress-style-item {
     width: 310px;
     height: 190px;
@@ -513,8 +512,9 @@
   .dress-style-item img:nth-child(3) {
     object-position: -80% 80%;
   }
-  .carousel-item{
+  .carousel-item {
     max-width: 300px;
     height: 200px;
+    padding: 15px;
   }
 }
