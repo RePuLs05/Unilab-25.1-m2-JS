@@ -48,6 +48,85 @@ const products = [
     discount: 30,
   },
 ];
+
+const costumers = [
+  {
+    name: "Sarah M.",
+    coment: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”`,
+  },
+  {
+    name: "Alex K.",
+    coment: `"Finding clothes that align with my personal style was hard
+                until I discovered Shop.co. The range of options is truly
+                remarkable."`,
+  },
+  {
+    name: "James L.",
+    coment: `"As someone who's always on the lookout for unique fashion
+                pieces, I'm thrilled to have stumbled upon Shop.co."`,
+  },
+  {
+    name: "Sarah M.",
+    coment: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”`,
+  },
+  {
+    name: "Alex K.",
+    coment: `"Finding clothes that align with my personal style was hard
+                until I discovered Shop.co. The range of options is truly
+                remarkable."`,
+  },
+  {
+    name: "James L.",
+    coment: `"As someone who's always on the lookout for unique fashion
+                pieces, I'm thrilled to have stumbled upon Shop.co."`,
+  },
+  {
+    name: "James L.",
+    coment: `"As someone who's always on the lookout for unique fashion
+                pieces, I'm thrilled to have stumbled upon Shop.co."`,
+  },
+];
+let costumerHtml = ``;
+costumers.forEach((costumers) => {
+  costumerHtml += `
+      <section class="carousel-item">
+              <img src="./images/rating-50.png" alt="Star">
+              <p class="customer-name">
+                ${costumers.name}
+                <img src="./images/main-page-img/check.png" alt="check" />
+              </p>
+              <p class="customer-review">
+                ${costumers.coment}
+              </p>
+            </section>
+  `;
+});
+
+document.querySelectorAll(".js-carousel").forEach((container) => {
+  container.innerHTML = costumerHtml;
+});
+const carousel = document.querySelector(".js-carousel");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+// Adjust based on .carousel-item width + gap (400px width + 20px gap)
+const scrollAmount = 310;
+
+nextBtn.addEventListener("click", () => {
+  carousel.scrollBy({
+    left: scrollAmount,
+    behavior: "smooth",
+  });
+});
+
+prevBtn.addEventListener("click", () => {
+  carousel.scrollBy({
+    left: -scrollAmount,
+    behavior: "smooth",
+  });
+});
+
+
 let productHtml = ``;
 products.forEach((product) => {
   const ratingImage = `./images/rating-${
@@ -93,10 +172,6 @@ products.forEach((product) => {
   productHtml += `</div>`;
 });
 
-
 document.querySelectorAll(".js-products-container").forEach((container) => {
   container.innerHTML = productHtml;
 });
-
-
-

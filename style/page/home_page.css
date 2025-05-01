@@ -303,6 +303,7 @@
 
 .dress-style-item {
   height: 289px;
+  border-radius: 40px;
   transition: transform 0.2s ease;
 }
 .dress-style-item:hover {
@@ -353,19 +354,21 @@
   display: flex;
   gap: 20px;
   padding: 10px;
-  width: 80%;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .carousel-item {
   flex: 0 0 auto;
-  scroll-snap-align: center;
   background: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 32px;
   text-align: left;
-  min-width: 300px;
-  max-width: 300px;
+  max-width: 400px;
+  height: 240px;
   transition: transform 0.3s ease;
 }
 
@@ -377,6 +380,7 @@
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 10px;
+  align-self: center;
 }
 
 .customer-review {
@@ -385,28 +389,18 @@
   margin-bottom: 15px;
 }
 
-.customer-rating {
-  font-size: 16px;
-  color: #f5a623;
-}
-
 .carousel-btn {
-  background-color: #000;
-  color: #fff;
   border: none;
-  border-radius: 50%;
   width: 40px;
   height: 40px;
-  font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
 }
 
-.carousel-btn:hover {
-  background-color: #333;
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes scroll {
@@ -518,5 +512,9 @@
   }
   .dress-style-item img:nth-child(3) {
     object-position: -80% 80%;
+  }
+  .carousel-item{
+    max-width: 300px;
+    height: 200px;
   }
 }
