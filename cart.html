@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
+    <link rel="stylesheet" href="./style/page/cart.css" />
+    <link rel="stylesheet" href="./style/page/home_page.css" />
     <link rel="stylesheet" href="./style/shared/main.css" />
+    <link rel="stylesheet" href="./style/page/ProductDetailPage.css" />
     <title>SHOP.CO</title>
   </head>
   <body>
@@ -16,7 +18,7 @@
             id="sing-up-btn"
             style="color: white; text-decoration: underline"
           >
-            Sign Up Now
+            <a href="./registration.html"> Sign Up Now </a>
           </button>
         </p>
         <button class="close-button">✕</button>
@@ -49,11 +51,15 @@
             </li>
             <li><a href="#">Testimonials</a></li>
           </ul>
-          <button class="signup-btn">Sign Up Now</button>
+          <button class="signup-btn">
+            <a href="./registration.html"> Sign Up Now </a>
+          </button>
         </div>
 
         <section class="logo">
-          <a href="./index.html"><img src="./images/logo.png" alt="Shop Logo" /></a>
+          <a href="./index.html"
+            ><img src="./images/logo.png" alt="Shop Logo"
+          /></a>
         </section>
 
         <nav class="navigation">
@@ -73,15 +79,18 @@
         </section>
 
         <section class="icons">
-          <a href="./cart.html"><img src="./images/basket_icon.png" alt="Basket" /></a>
+          <a href="./cart.html"
+            ><img src="./images/basket_icon.png" alt="Basket"
+          /></a>
           <a href="#"><img src="./images/person_icon.png" alt="person" /></a>
         </section>
       </section>
     </header>
-    <h1>registracia</h1>
-
-     <!-- STAY UPTO DATE ABOUT OUR LATEST OFFERS and FOOTER SECTION -->
-     <footer class="footer">
+    <img src="./images/cart-headline.png" alt="hedline" class="hedline" />
+    <h2>Your cart</h2>
+    
+    <!-- STAY UPTO DATE ABOUT OUR LATEST OFFERS and FOOTER SECTION -->
+    <footer class="footer">
       <section class="newsletter">
         <div class="newsletter-container">
           <h2>
@@ -91,7 +100,11 @@
           <form class="newsletter-form">
             <section class="mail-input">
               <img src="./images/maill.png" alt="mail icon" />
-              <input type="email" placeholder="Enter your email address" required />
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+              />
             </section>
             <button type="submit">Subscribe to Newsletter</button>
           </form>
@@ -164,7 +177,9 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/data.js"></script>
     <script src="./js/shared/shared.js"></script>
-    
+    <script src="./js/mainPage.js"></script>
   </body>
 </html>

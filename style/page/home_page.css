@@ -153,9 +153,10 @@
 /* Grid Layout */
 .new-arrivals-wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 200px 10px;
 }
 
 .product-container {
@@ -367,7 +368,7 @@
   padding: 32px;
   text-align: left;
   max-width: 400px;
-  height: 240px;
+  /* height: 240px; */
   transition: transform 0.3s ease;
 }
 

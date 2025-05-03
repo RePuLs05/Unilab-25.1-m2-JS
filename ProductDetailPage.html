@@ -76,13 +76,20 @@
         </section>
 
         <section class="icons">
-          <a href="#"><img src="./images/basket_icon.png" alt="Basket" /></a>
+          <a href="./cart.html"
+            ><img src="./images/basket_icon.png" alt="Basket"
+          /></a>
           <a href="#"><img src="./images/person_icon.png" alt="person" /></a>
         </section>
       </section>
     </header>
 
     <main>
+      <img
+        src="./images/productdetail-hedline.png"
+        alt="hedline"
+        class="hedline"
+      />
       <section class="hero-category">
         <section class="hero-category-wrapper">
           <section class="hero-category-img">
@@ -102,7 +109,6 @@
                 <span>4.5/5</span>
               </section>
 
-        
               <div class="product-price">
                 <span class="discounted-price">$50</span>
                 <span class="old-price">$200</span>
@@ -144,24 +150,95 @@
         </section>
       </section>
       <!-- rating-reviews -->
-      <section class="rating-reviews">
+      <section class="reviews">
         <section class="title-reviews">
           <h3>Product Details</h3>
           <h3>Rating & Reviews</h3>
           <h3>FAQs</h3>
         </section>
-        <section class="rating-reviews-navigation">
-          <span>
-            <h3>All Reviews</h3>
-            <p>(451)</p></span
-          >
-          <section class="functionality">
-            <img src="./images/filter-icon.png" alt="filter" />
-            <li>Latest<select name="Latest" id="Latest"></select></li>
+        <div class="reviews-header">
+          <h2>All Reviews <span>(451)</span></h2>
+          <div class="reviews-controls">
+            <button class="filter-btn">
+              <img src="./images/filter-icon.png" alt="Filter" />
+            </button>
+            <select>
+              <option>Latest</option>
+              <option>Highest Rated</option>
+              <option>Oldest</option>
+            </select>
             <button class="write-review">Write a Review</button>
-          </section>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <!-- costumer coments rewiw -->
+        </div>
+
+        <div class="load-more-container">
+          <button class="load-more">Load More Reviews</button>
+        </div>
+      </section>
+      <!-- You might also like section -->
+      <section class="also-like">
+        <h2>YOU MIGHT ALSO LIKE SECTION</h2>
+        <section class="new-arrivals-wrapper js-products-container">
+          <!-- New Arrivals section
+              cart item 
+          -->
         </section>
       </section>
+      <!-- Review Modal HTML -->
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Write a Review</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <form id="reviewForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <div class="input-container">
+          <div class="input-icon">
+            <img src="./images/person_icon.png" alt="User icon" class="user-icon">
+          </div>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">country/city</label>
+        <div class="input-container">
+          <div class="input-icon">
+            <img src="./images/maill.png" alt="Email icon" class="email-icon">
+          </div>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Share your experience in scaling</label>
+        <div class="star-rating">
+          <span class="star" data-rating="1">★</span>
+          <span class="star" data-rating="2">★</span>
+          <span class="star" data-rating="3">★</span>
+          <span class="star" data-rating="4">★</span>
+          <span class="star" data-rating="5">★</span>
+        </div>
+        <input type="hidden" id="rating" value="0">
+      </div>
+      
+      <div class="form-group">
+        <textarea id="reviewText" placeholder="Add your comments..." required></textarea>
+      </div>
+      
+      <div class="form-buttons">
+        <button type="button" class="cancel-btn">Cancel</button>
+        <button type="submit" class="submit-btn">SUBMIT</button>
+      </div>
+    </form>
+  </div>
+</div>
     </main>
     <!-- STAY UPTO DATE ABOUT OUR LATEST OFFERS and FOOTER SECTION -->
     <footer class="footer">

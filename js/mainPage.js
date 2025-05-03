@@ -18,7 +18,6 @@ function addAnimation() {
   });
 }
 
-
 let costumerHtml = ``;
 costumers.forEach((costumers) => {
   costumerHtml += `
@@ -59,15 +58,18 @@ prevBtn.addEventListener("click", () => {
   });
 });
 
+//produqtebis gamoiyeneba
 
 let productHtml = ``;
-products.forEach((product) => {
+
+// Only process the first 4 products using slice(0, 4)
+products.slice(0, 4).forEach((product) => {
   const ratingImage = `./images/rating-${
     Math.round(product.rating * 2) * 5
   }.png`;
 
   productHtml += `
-  <a href="./ProductDetailPage.html#/${product.id}">
+  <a href="./ProductDetailPage.html?id=${product.id}">
     <div class="product-container">
       <div class="product-image-container">
         <img
@@ -110,3 +112,58 @@ products.forEach((product) => {
 document.querySelectorAll(".js-products-container").forEach((container) => {
   container.innerHTML = productHtml;
 });
+
+let topSellingHtml = ``;
+
+// Only process elements from index 4 to 7 (fifth to eighth products) using slice(4, 8)
+products.slice(4, 8).forEach((product) => {
+  const ratingImage = `./images/rating-${
+    Math.round(product.rating * 2) * 5
+  }.png`;
+
+  topSellingHtml += `
+  <a href="./ProductDetailPage.html?id=${product.id}">
+    <div class="product-container">
+      <div class="product-image-container">
+        <img
+          class="product-image"
+          src="${product.img}"
+        />
+      </div>
+
+      <div class="product-name ">
+        ${product.name}
+      </div>
+
+      <div class="product-rating-container">
+        <img
+          class="product-rating-stars"
+          src="${ratingImage}"
+        />
+        <div class="product-rating-count">${product.rating}/5</div>
+      </div>
+      </a>
+  `;
+
+  if ("discount" in product && "oldPrice" in product) {
+    topSellingHtml += `
+      <div class="product-price">
+        <span class="discounted-price">$${product.priceCent}</span>
+        <span class="old-price">$${product.oldPrice}</span>
+        <span class="discount-tag">-${product.discount}%</span>
+      </div>
+    `;
+  } else {
+    topSellingHtml += `
+      <div class="product-price">$${product.priceCent}</div>
+    `;
+  }
+
+  topSellingHtml += `</div>`;
+});
+
+document
+  .querySelectorAll(".js-products-container-top-selling")
+  .forEach((container) => {
+    container.innerHTML = topSellingHtml;
+  });
