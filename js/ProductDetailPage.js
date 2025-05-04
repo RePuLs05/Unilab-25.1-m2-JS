@@ -84,7 +84,27 @@ if (product) {
   if (addToCartButton) {
     addToCartButton.addEventListener("click", () => {
       const quantity = parseInt(document.querySelector(".actions").value);
-      console.log(`Added ${quantity} of ${product.name} to cart`);
+
+      // მოიძიე არსებული კალათა
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // მოძებნე უკვე არსებული პროდუქტი
+      let matchingItem = cart.find((item) => item.productId === productId);
+
+      if (matchingItem) {
+        matchingItem.quantity += quantity;
+      } else {
+        cart.push({
+          productId: productId,
+          quantity: quantity,
+          name: product.name,
+          price: product.priceCent,
+          image: product.img,
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      console.log("Updated cart:", cart);
     });
   }
 } else {
@@ -165,9 +185,5 @@ products.slice(0, 4).forEach((product) => {
 document.querySelectorAll(".js-products-container").forEach((container) => {
   container.innerHTML = productHtml;
 });
-
-
-
-
 
 // Review Modal JavaScript
