@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/page/ProductDetailPage.css" />
     <link rel="stylesheet" href="./style/page/home_page.css" />
+    <link rel="stylesheet" href="./style/page/category.css" />
     <link rel="stylesheet" href="./style/shared/main.css" />
-    <title>SHOP.CO</title>
+    <title>SHOP.CO - Casual</title>
   </head>
   <body>
     <header>
@@ -84,7 +85,184 @@
       </section>
     </header>
 
-    <h1>categorya</h1>
+    <main class="category-container">
+      <img src="./images/category-hedline.png" alt="category-hedline" />
+      <div class="category-title">
+        <h2>Casual</h2>
+      </div>
+
+      <div class="category-content">
+        <!-- Sidebar with filters -->
+        <aside class="category-sidebar">
+          <h3>Filters</h3>
+
+          <!-- Product types -->
+          <div class="filter-section">
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>T-shirts</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Shirts</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Skirts</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Hoodie</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Jeans</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price filter -->
+          <div class="filter-section">
+            <div class="filter-header collapsible">
+              <h4>Price</h4>
+              <span class="collapse-icon">^</span>
+            </div>
+            <div class="price-slider">
+              <input
+                type="range"
+                min="0"
+                max="100"
+                class="slider"
+                id="priceRange"
+              />
+              <div class="price-range">
+                <span>$50</span>
+                <span>$200</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colors filter -->
+          <div class="filter-section">
+            <div class="filter-header collapsible">
+              <h4>Colors</h4>
+              <span class="collapse-icon">^</span>
+            </div>
+            <div class="color-options">
+              <div class="color-circle green"></div>
+              <div class="color-circle red"></div>
+              <div class="color-circle yellow"></div>
+              <div class="color-circle orange"></div>
+              <div class="color-circle blue-light"></div>
+              <div class="color-circle blue"></div>
+              <div class="color-circle purple"></div>
+              <div class="color-circle pink"></div>
+              <div class="color-circle white"></div>
+              <div class="color-circle black"></div>
+            </div>
+          </div>
+
+          <!-- Size filter -->
+          <div class="filter-section">
+            <div class="filter-header collapsible">
+              <h4>Size</h4>
+              <span class="collapse-icon">^</span>
+            </div>
+            <div class="size-options">
+              <button class="size-btn">XX-Small</button>
+              <button class="size-btn">X-Small</button>
+              <button class="size-btn">Small</button>
+              <button class="size-btn">Medium</button>
+              <button class="size-btn selected">Large</button>
+              <button class="size-btn">X-Large</button>
+              <button class="size-btn">XX-Large</button>
+              <button class="size-btn">3X-Large</button>
+              <button class="size-btn">4X-Large</button>
+            </div>
+          </div>
+
+          <!-- Dress Style filter -->
+          <div class="filter-section">
+            <div class="filter-header collapsible">
+              <h4>Dress Style</h4>
+              <span class="collapse-icon">^</span>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Casual</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Formal</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Party</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+            <div class="filter-type">
+              <div class="filter-header">
+                <span>Gym</span>
+                <span class="expand-icon">›</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="apply-filter-btn">Apply Filter</button>
+        </aside>
+
+        <!-- Products grid -->
+        <div class="category-products">
+          <div class="category-products-header">
+            <p>Showing 1-10 of 100 Products</p>
+            <div class="sort-dropdown">
+              <span>Sort by:</span>
+              <select name="sort" id="sortOptions">
+                <option value="most-popular">Most Popular</option>
+                <option value="newest">Newest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="products-grid js-products-grid"></div>
+
+          <!-- Pagination -->
+          <div class="pagination">
+            <button class="pagination-btn prev-btn">
+              <span>Previous</span>
+            </button>
+            <div class="page-numbers">
+              <button class="page-number active">1</button>
+              <button class="page-number">2</button>
+              <button class="page-number">3</button>
+              <span class="ellipsis">...</span>
+              <button class="page-number">9</button>
+              <button class="page-number">10</button>
+            </div>
+            <button class="pagination-btn next-btn">
+              <span>Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- STAY UPTO DATE ABOUT OUR LATEST OFFERS and FOOTER SECTION -->
     <footer class="footer">
       <section class="newsletter">
@@ -175,6 +353,6 @@
     </footer>
     <script src="./js/data.js"></script>
     <script src="./js/shared/shared.js"></script>
-    <script src="./js/ProductDetailPage.js"></script>
+    <script src="./js/category.js"></script>
   </body>
 </html>

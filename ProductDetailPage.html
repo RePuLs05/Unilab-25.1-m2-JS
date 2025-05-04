@@ -190,53 +190,8 @@
       </section>
       <!-- Review Modal HTML -->
 <div class="modal-overlay" id="reviewModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Write a Review</h2>
-      <button class="close-modal">&times;</button>
-    </div>
-    <form id="reviewForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <div class="input-container">
-          <div class="input-icon">
-            <img src="./images/person_icon.png" alt="User icon" class="user-icon">
-          </div>
-          <input type="text" id="name" placeholder="Enter your name" required>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">country/city</label>
-        <div class="input-container">
-          <div class="input-icon">
-            <img src="./images/maill.png" alt="Email icon" class="email-icon">
-          </div>
-          <input type="email" id="email" placeholder="Enter your email" required>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Share your experience in scaling</label>
-        <div class="star-rating">
-          <span class="star" data-rating="1">★</span>
-          <span class="star" data-rating="2">★</span>
-          <span class="star" data-rating="3">★</span>
-          <span class="star" data-rating="4">★</span>
-          <span class="star" data-rating="5">★</span>
-        </div>
-        <input type="hidden" id="rating" value="0">
-      </div>
-      
-      <div class="form-group">
-        <textarea id="reviewText" placeholder="Add your comments..." required></textarea>
-      </div>
-      
-      <div class="form-buttons">
-        <button type="button" class="cancel-btn">Cancel</button>
-        <button type="submit" class="submit-btn">SUBMIT</button>
-      </div>
-    </form>
+  <div class="modal-content js-modal-content">
+    <!-- form for rewiw modal -->
   </div>
 </div>
     </main>
@@ -331,5 +286,6 @@
     <script src="./js/data.js"></script>
     <script src="./js/shared/shared.js"></script>
     <script src="./js/ProductDetailPage.js"></script>
+    <script src="./js/ProductReviewModal.js"></script>
   </body>
 </html>

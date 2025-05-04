@@ -1,0 +1,285 @@
+/* Category Page Styles */
+.category-container {
+  margin: 10px;
+}
+
+.category-title {
+  margin-bottom: 30px;
+}
+
+.category-title h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.category-content {
+  display: flex;
+  gap: 30px;
+}
+
+/* Sidebar Filters */
+.category-sidebar {
+  flex: 0 0 220px;
+  padding-right: 20px;
+}
+
+.category-sidebar h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.filter-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.filter-type {
+  margin-bottom: 12px;
+}
+
+.expand-icon,
+.collapse-icon {
+  font-size: 16px;
+  transform: rotate(90deg);
+  color: #999;
+}
+
+.collapse-icon {
+  transform: rotate(180deg);
+}
+
+.price-slider {
+  margin-top: 15px;
+}
+
+.slider {
+  width: 100%;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Color options */
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.color-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.color-circle:hover {
+  border-color: #000;
+}
+
+.green {
+  background-color: #3cb371;
+}
+
+.red {
+  background-color: #ff6b6b;
+}
+
+.yellow {
+  background-color: #ffd700;
+}
+
+.orange {
+  background-color: #ff7f50;
+}
+
+.blue-light {
+  background-color: #00bfff;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.purple {
+  background-color: #9370db;
+}
+
+.pink {
+  background-color: #ff69b4;
+}
+
+.white {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.black {
+  background-color: #000000;
+}
+
+/* Size options */
+.size-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.size-btn {
+  padding: 6px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-btn:hover,
+.size-btn.selected {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.apply-filter-btn {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.apply-filter-btn:hover {
+  background-color: #333;
+}
+
+/* Products Grid */
+.category-products {
+  flex: 1;
+}
+
+.category-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.category-products-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-dropdown span {
+  font-size: 14px;
+  color: #666;
+}
+
+.sort-dropdown select {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  gap: 24px;
+  place-content: center;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* .product-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+} */
+
+.pagination {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 130px));
+    gap: 10px;
+  }
+  .category-sidebar {
+    display: none;
+  }
+  .pagination {
+    justify-content: space-between;
+  }
+}

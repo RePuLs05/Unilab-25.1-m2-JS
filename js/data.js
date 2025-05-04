@@ -71,6 +71,16 @@ const products = [
     priceCent: 120,
     coment: "1",
   },
+  {
+    id: 9,
+    img: "./images/main-page-img/SKINNY FIT JEANS.png",
+    name: "Skinny Fit Jeans",
+    rating: 3.5,
+    priceCent: 240,
+    oldPrice: 260,
+    discount: 20,
+    coment: "2",
+  },
 ];
 
 const costumers = [
