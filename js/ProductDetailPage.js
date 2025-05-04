@@ -79,7 +79,7 @@ if (product) {
 
   document.querySelector(".hero-category-info").innerHTML = productHtml;
 
-  // Add event listener to the Add to Cart button
+  // Add event listener to the Add to Cart button-------------------------------------------------------------------------
   const addToCartButton = document.querySelector(".add-to-cart");
   if (addToCartButton) {
     addToCartButton.addEventListener("click", () => {
@@ -91,7 +91,7 @@ if (product) {
   document.querySelector(".hero-category-info").innerHTML =
     "<h2>Product not found</h2>";
 }
-
+//----------------------------------------------------------------------------------
 let costumerCommentHtml = ``;
 costumers.forEach((costumers) => {
   costumerCommentHtml += `

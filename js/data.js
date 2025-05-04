@@ -37,6 +37,14 @@ const products = [
   },
   {
     id: 5,
+    img: "./images/main-page-img/CHECKERED SHIRT.png",
+    name: "CHECKERED SHIRT",
+    rating: 4.5,
+    priceCent: 180,
+    coment: "3",
+  },
+  {
+    id: 6,
     img: "./images/main-page-img/SLEEVE STRIPED T-SHIRT.png",
     name: "SLEEVE STRIPED T-SHIRT",
     rating: 4.5,
@@ -44,14 +52,6 @@ const products = [
     oldPrice: 160,
     discount: 30,
     coment: "4",
-  },
-  {
-    id: 6,
-    img: "./images/main-page-img/CHECKERED SHIRT.png",
-    name: "CHECKERED SHIRT",
-    rating: 4.5,
-    priceCent: 180,
-    coment: "3",
   },
   {
     id: 7,
