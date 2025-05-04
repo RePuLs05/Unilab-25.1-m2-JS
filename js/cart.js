@@ -10,7 +10,7 @@ const generateCartItemHtml = (product) => `
       <section class="item-price">$${product.price}</section>
       <section class="item-attributes">Quantity: ${product.quantity}</section>
     </section>
-    <button class="remove-btn">✕</button>
+    <button class="remove-btn"><img src="./images/rubbish-bin.png" alt="remove"></button>
   </section>
 `;
 
