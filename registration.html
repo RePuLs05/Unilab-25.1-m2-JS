@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
+    <link rel="stylesheet" href="./style/page/registration.css" />
     <link rel="stylesheet" href="./style/shared/main.css" />
     <title>SHOP.CO</title>
   </head>
@@ -53,7 +53,9 @@
         </div>
 
         <section class="logo">
-          <a href="./index.html"><img src="./images/logo.png" alt="Shop Logo" /></a>
+          <a href="./index.html"
+            ><img src="./images/logo.png" alt="Shop Logo"
+          /></a>
         </section>
 
         <nav class="navigation">
@@ -73,98 +75,262 @@
         </section>
 
         <section class="icons">
-          <a href="./cart.html"><img src="./images/basket_icon.png" alt="Basket" /></a>
+          <a href="./cart.html"
+            ><img src="./images/basket_icon.png" alt="Basket"
+          /></a>
           <a href="#"><img src="./images/person_icon.png" alt="person" /></a>
         </section>
       </section>
     </header>
-    <h1>registracia</h1>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login & Registration System</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <!-- Login Form -->
+        <main class="main-registration">
+          <div class="container" id="loginForm">
+            <h1>Welcome Back</h1>
+            <p>
+              Don't have an account?
+              <a onclick="showRegistrationForm()" class="link-text">Sign Up</a>
+            </p>
 
-     <!-- STAY UPTO DATE ABOUT OUR LATEST OFFERS and FOOTER SECTION -->
-     <footer class="footer">
-      <section class="newsletter">
-        <div class="newsletter-container">
-          <h2>
-            STAY UP TO DATE ABOUT<br />
-            OUR LATEST OFFERS
-          </h2>
-          <form class="newsletter-form">
-            <section class="mail-input">
-              <img src="./images/maill.png" alt="mail icon" />
-              <input type="email" placeholder="Enter your email address" required />
-            </section>
-            <button type="submit">Subscribe to Newsletter</button>
-          </form>
-        </div>
-      </section>
-      <section class="footer-main">
-        <div class="footer-column brand">
-          <h3>SHOP.CO</h3>
-          <p>
-            We have clothes that suits your style and which you're proud to
-            wear. From women to men.
-          </p>
-          <div class="social-icons">
-            <a href="#"><img src="./images/twitter.png" alt="twitter" /></a>
-            <a href="#"><img src="./images/faceboock.png" alt="faceboock" /></a>
-            <a href="#"><img src="./images/ig.png" alt="instagram" /></a>
-            <a href="#"><img src="./images/github.png" alt="github" /></a>
+            <form id="login">
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="loginEmail"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group password-wrapper">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Password"
+                  required
+                />
+                <span
+                  class="toggle-password"
+                  onclick="togglePasswordVisibility('loginPassword', this)"
+                >
+                  <!-- Password visibility icon will be added via JavaScript -->
+                </span>
+              </div>
+              <div class="forgot-password">
+                <a href="#">Forgot Password</a>
+              </div>
+              <button class="registration-btn" type="button" onclick="login()">
+                Login
+              </button>
+            </form>
+
+            <div class="divider">
+              <span>or</span>
+            </div>
+
+            <div class="social-login">
+              <button class="social-btn">
+                <img src="./images/Google - Original.png" alt="" />
+                Continue with Google
+              </button>
+              <button class="social-btn">
+                <img src="./images/Apple - Original.png" alt="" />
+                Continue with Apple
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div class="footer-column">
-          <h4>COMPANY</h4>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">Career</a></li>
-          </ul>
-        </div>
+          <!-- Registration Form -->
+          <div class="container hidden" id="registrationForm">
+            <h1>Create account</h1>
+            <p>
+              Already have an account?
+              <a onclick="showLoginForm()" class="link-text">Login</a>
+            </p>
 
-        <div class="footer-column">
-          <h4>HELP</h4>
-          <ul>
-            <li><a href="#">Customer Support</a></li>
-            <li><a href="#">Delivery Details</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
+            <form id="register">
+              <div class="form-group name-group">
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="registerEmail"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group password-wrapper">
+                <input
+                  type="password"
+                  id="registerPassword"
+                  placeholder="Password"
+                  required
+                />
+                <span
+                  class="toggle-password"
+                  onclick="togglePasswordVisibility('registerPassword', this)"
+                >
+                  <!-- Password visibility icon will be added via JavaScript -->
+                </span>
+              </div>
+              <div class="checkbox-container">
+                <input type="checkbox" id="termsCheckbox" required />
+                <label for="termsCheckbox"
+                  >I agree to DopeSass Terms of service and Privacy
+                  policy</label
+                >
+              </div>
+              <button
+                class="registration-btn"
+                type="button"
+                onclick="register()"
+              >
+                Create Account
+              </button>
+            </form>
 
-        <div class="footer-column">
-          <h4>FAQ</h4>
-          <ul>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Manage Deliveries</a></li>
-            <li><a href="#">Orders</a></li>
-            <li><a href="#">Payments</a></li>
-          </ul>
-        </div>
+            <div class="divider">
+              <span>or</span>
+            </div>
 
-        <div class="footer-column">
-          <h4>RESOURCES</h4>
-          <ul>
-            <li><a href="#">Free eBooks</a></li>
-            <li><a href="#">Development Tutorial</a></li>
-            <li><a href="#">How to - Blog</a></li>
-            <li><a href="#">Youtube Playlist</a></li>
-          </ul>
-        </div>
-      </section>
+            <div class="social-login">
+              <button class="social-btn">
+                <img src="./images/Google - Original.png" alt="" />
+                Continue with Google
+              </button>
+              <button class="social-btn">
+                <img src="./images/Apple - Original.png" alt="" />
+                Continue with Apple
+              </button>
+            </div>
+          </div>
 
-      <div class="footer-bottom">
-        <p>Shop.co © 2000–2023, All Rights Reserved</p>
-        <div class="payment-icons">
-          <img src="./images/visa.png" alt="Visa" />
-          <img src="./images/master-card.png" alt="Mastercard" />
-          <img src="./images/paypal.png" alt="PayPal" />
-          <img src="./images/apple-pay.png" alt="Apple Pay" />
-          <img src="./images/google-pay.png" alt="Google Pay" />
-        </div>
-      </div>
-    </footer>
-    <script src="./js/shared/shared.js"></script>
-    
+          <!-- Success Message -->
+          <div class="container hidden" id="successMessage">
+            <div class="success-message">
+              <div class="success-icon">
+                <!-- Success icon will be added by you -->
+                <img src="./images/check-circle.png" alt="check-circle" />
+              </div>
+              <h2>Sign Up successfully</h2>
+              <button class="registration-btn" onclick="showLoginForm()">
+                Login
+              </button>
+            </div>
+          </div>
+        </main>
+        <!-- STAY UPTO DATE ABOUT OUR LATEST OFFERS and FOOTER SECTION -->
+        <footer class="footer">
+          <section class="newsletter">
+            <div class="newsletter-container">
+              <h2>
+                STAY UP TO DATE ABOUT<br />
+                OUR LATEST OFFERS
+              </h2>
+              <form class="newsletter-form">
+                <section class="mail-input">
+                  <img src="./images/maill.png" alt="mail icon" />
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </section>
+                <button type="submit">Subscribe to Newsletter</button>
+              </form>
+            </div>
+          </section>
+          <section class="footer-main">
+            <div class="footer-column brand">
+              <h3>SHOP.CO</h3>
+              <p>
+                We have clothes that suits your style and which you're proud to
+                wear. From women to men.
+              </p>
+              <div class="social-icons">
+                <a href="#"><img src="./images/twitter.png" alt="twitter" /></a>
+                <a href="#"
+                  ><img src="./images/faceboock.png" alt="faceboock"
+                /></a>
+                <a href="#"><img src="./images/ig.png" alt="instagram" /></a>
+                <a href="#"><img src="./images/github.png" alt="github" /></a>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <h4>COMPANY</h4>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">Career</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>HELP</h4>
+              <ul>
+                <li><a href="#">Customer Support</a></li>
+                <li><a href="#">Delivery Details</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>FAQ</h4>
+              <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Manage Deliveries</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Payments</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>RESOURCES</h4>
+              <ul>
+                <li><a href="#">Free eBooks</a></li>
+                <li><a href="#">Development Tutorial</a></li>
+                <li><a href="#">How to - Blog</a></li>
+                <li><a href="#">Youtube Playlist</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="footer-bottom">
+            <p>Shop.co © 2000–2023, All Rights Reserved</p>
+            <div class="payment-icons">
+              <img src="./images/visa.png" alt="Visa" />
+              <img src="./images/master-card.png" alt="Mastercard" />
+              <img src="./images/paypal.png" alt="PayPal" />
+              <img src="./images/apple-pay.png" alt="Apple Pay" />
+              <img src="./images/google-pay.png" alt="Google Pay" />
+            </div>
+          </div>
+        </footer>
+        <script src="./js/shared/shared.js"></script>
+        <script src="./js/registration.js"></script>
+      </body>
+    </html>
   </body>
 </html>

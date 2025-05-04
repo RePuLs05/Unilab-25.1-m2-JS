@@ -85,33 +85,8 @@ if (product) {
     addToCartButton.addEventListener("click", () => {
       const quantity = parseInt(document.querySelector(".actions").value);
       console.log(`Added ${quantity} of ${product.name} to cart`);
-      // Here you would add the logic to actually add the item to the cart
-      alert(`Added ${quantity} of ${product.name} to cart!`);
     });
   }
-
-  // Add event listeners to the size buttons
-  const sizeButtons = document.querySelectorAll(".size-options button");
-  sizeButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Remove the active class from all buttons
-      sizeButtons.forEach((btn) => btn.classList.remove("active"));
-      // Add the active class to the clicked button
-      button.classList.add("active");
-    });
-  });
-
-  // Add event listeners to the color options
-  const colorOptions = document.querySelectorAll(
-    ".color-options .color-circle"
-  );
-  colorOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      colorOptions.forEach((opt) => opt.classList.remove("active"));
-
-      option.classList.add("active");
-    });
-  });
 } else {
   document.querySelector(".hero-category-info").innerHTML =
     "<h2>Product not found</h2>";
