@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/page/admin.css" />
+    <title>Admin Dashboard - SHOP.CO</title>
+  </head>
+  <body>
+    <main class="dashboard-layout">
+      <aside class="sidebar">
+        <h2>SHOP.CO Admin</h2>
+        <nav class="sidebar-nav">
+          <button class="nav-link is-active js-nav-link" data-section="overview">Overview</button>
+          <button class="nav-link js-nav-link" data-section="products">Products</button>
+          <button class="nav-link js-nav-link" data-section="orders">Orders</button>
+          <button class="nav-link js-nav-link" data-section="customers">Customers</button>
+          <button class="nav-link js-nav-link" data-section="analytics">Analytics</button>
+          <button class="nav-link js-nav-link" data-section="settings">Settings</button>
+        </nav>
+        <div class="sidebar-actions">
+          <a class="btn secondary" href="./index.html">Back to Store</a>
+          <button class="btn danger js-logout-btn">Logout</button>
+        </div>
+      </aside>
+
+      <section class="content">
+        <header class="topbar">
+          <h1 class="js-section-title">Dashboard Overview</h1>
+          <button class="btn primary js-open-product-modal">+ Add Product</button>
+        </header>
+
+        <section class="panel js-section" data-section="overview">
+          <div class="stats-grid js-overview-cards"></div>
+          <div class="grid-two">
+            <article class="card">
+              <h3>Sales Overview</h3>
+              <canvas class="js-sales-chart" width="600" height="250"></canvas>
+            </article>
+            <article class="card">
+              <h3>Recent Activity</h3>
+              <ul class="activity-list js-activity-list"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel hidden js-section" data-section="products">
+          <article class="card">
+            <div class="card-head">
+              <h3>Products</h3>
+              <div class="inline-actions">
+                <input type="text" class="input js-product-search" placeholder="Search products..." />
+                <select class="input js-product-category-filter">
+                  <option value="">All categories</option>
+                  <option value="T-shirt">T-shirt</option>
+                  <option value="Hoodie">Hoodie</option>
+                  <option value="Jeans">Jeans</option>
+                  <option value="Shirt">Shirt</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>ID</th><th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="js-products-table-body"></tbody>
+              </table>
+            </div>
+            <div class="pagination js-product-pagination"></div>
+          </article>
+        </section>
+
+        <section class="panel hidden js-section" data-section="orders">
+          <article class="card">
+            <h3>Orders</h3>
+            <div class="table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th><th>Customer</th><th>Products</th><th>Total</th><th>Status</th><th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="js-orders-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel hidden js-section" data-section="customers">
+          <article class="card">
+            <h3>Customers</h3>
+            <div class="table-wrapper">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Name</th><th>Email</th><th>Phone</th><th>Total Orders</th><th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="js-customers-table-body"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel hidden js-section" data-section="analytics">
+          <div class="stats-grid js-analytics-cards"></div>
+          <div class="grid-two">
+            <article class="card">
+              <h3>Orders Per Day</h3>
+              <canvas class="js-orders-chart" width="600" height="250"></canvas>
+            </article>
+            <article class="card">
+              <h3>Top Products</h3>
+              <ul class="top-list js-top-products"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel hidden js-section" data-section="settings">
+          <article class="card">
+            <h3>Store Settings</h3>
+            <form class="settings-form js-settings-form">
+              <label>Store Name<input class="input js-store-name" required /></label>
+              <label>Admin Email<input class="input js-admin-email" type="email" required /></label>
+              <label>Currency
+                <select class="input js-currency">
+                  <option value="USD">USD ($)</option>
+                  <option value="EUR">EUR (€)</option>
+                  <option value="GEL">GEL (₾)</option>
+                </select>
+              </label>
+              <label>Theme
+                <select class="input js-theme">
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </label>
+              <div class="inline-actions">
+                <button class="btn primary js-save-settings" type="submit">Save Settings</button>
+                <button class="btn secondary js-export-json" type="button">Export Data (JSON)</button>
+              </div>
+            </form>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <section class="modal hidden js-modal">
+      <div class="modal-overlay js-modal-close"></div>
+      <div class="modal-content js-modal-content"></div>
+    </section>
+
+    <div class="toast-container js-toast-container"></div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/admin/auth.js"></script>
+    <script src="./js/admin/storage.js"></script>
+    <script src="./js/admin/ui.js"></script>
+    <script src="./js/admin/products.js"></script>
+    <script src="./js/admin/orders.js"></script>
+    <script src="./js/admin/customers.js"></script>
+    <script src="./js/admin/analytics.js"></script>
+    <script src="./js/admin/settings.js"></script>
+    <script src="./js/admin/dashboard.js"></script>
+  </body>
+</html>

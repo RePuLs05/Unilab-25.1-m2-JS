@@ -1,8 +1,49 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productId = parseInt(urlParams.get("id"));
+const productList = window.shopData ? window.shopData.getProducts() : products;
+
+function showAddToCartNotification(message) {
+  const existingToast = document.querySelector(".js-add-to-cart-toast");
+  if (existingToast) {
+    existingToast.remove();
+  }
+
+  const toast = document.createElement("div");
+  toast.className = "js-add-to-cart-toast";
+  toast.textContent = message;
+  toast.style.position = "fixed";
+  toast.style.right = "20px";
+  toast.style.bottom = "20px";
+  toast.style.backgroundColor = "#111827";
+  toast.style.color = "#ffffff";
+  toast.style.padding = "12px 16px";
+  toast.style.borderRadius = "10px";
+  toast.style.fontSize = "14px";
+  toast.style.fontWeight = "600";
+  toast.style.boxShadow = "0 8px 20px rgba(0,0,0,0.2)";
+  toast.style.zIndex = "9999";
+  toast.style.opacity = "0";
+  toast.style.transform = "translateY(8px)";
+  toast.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.style.opacity = "1";
+    toast.style.transform = "translateY(0)";
+  });
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateY(8px)";
+    setTimeout(() => {
+      toast.remove();
+    }, 250);
+  }, 1800);
+}
 
 // Find the product with the matching ID
-const product = products.find((p) => p.id === productId);
+const product = productList.find((p) => p.id === productId);
 console.log("Product ID:", productId);
 console.log("Product data:", product);
 
@@ -83,7 +124,8 @@ if (product) {
   const addToCartButton = document.querySelector(".add-to-cart");
   if (addToCartButton) {
     addToCartButton.addEventListener("click", () => {
-      const quantity = parseInt(document.querySelector(".actions").value);
+      const rawQuantity = parseInt(document.querySelector(".actions").value, 10);
+      const quantity = Number.isNaN(rawQuantity) || rawQuantity < 1 ? 1 : rawQuantity;
 
       // მოიძიე არსებული კალათა
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -105,6 +147,9 @@ if (product) {
 
       localStorage.setItem("cart", JSON.stringify(cart));
       console.log("Updated cart:", cart);
+      showAddToCartNotification(
+        `${quantity} x ${product.name} added to cart`
+      );
     });
   }
 } else {
@@ -136,7 +181,7 @@ document.querySelectorAll(".review-grid").forEach((container) => {
 let productHtml = ``;
 
 // Only process the first 4 products using slice(0, 4)
-products.slice(0, 4).forEach((product) => {
+productList.slice(0, 4).forEach((product) => {
   const ratingImage = `./images/rating-${
     Math.round(product.rating * 2) * 5
   }.png`;

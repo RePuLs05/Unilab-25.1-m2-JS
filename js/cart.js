@@ -1,5 +1,3 @@
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
 const generateCartItemHtml = (product) => `
   <section class="cart-item">
     <section class="item-image">
@@ -14,6 +12,35 @@ const generateCartItemHtml = (product) => `
   </section>
 `;
 
+function formatMoney(value) {
+  return `$${Number(value).toFixed(2)}`;
+}
+
+function renderOrderSummary(cartItems) {
+  const subtotalElement = document.querySelector(".js-subtotal");
+  const discountElement = document.querySelector(".js-discount");
+  const deliveryElement = document.querySelector(".js-delivery");
+  const totalElement = document.querySelector(".js-total");
+
+  if (!subtotalElement || !discountElement || !deliveryElement || !totalElement) {
+    return;
+  }
+
+  const subtotal = cartItems.reduce((sum, item) => {
+    return sum + Number(item.price) * Number(item.quantity);
+  }, 0);
+
+  const discountRate = 0.2;
+  const discountValue = subtotal * discountRate;
+  const deliveryFee = cartItems.length > 0 ? 15 : 0;
+  const total = subtotal - discountValue + deliveryFee;
+
+  subtotalElement.textContent = formatMoney(subtotal);
+  discountElement.textContent = `-${formatMoney(discountValue)}`;
+  deliveryElement.textContent = formatMoney(deliveryFee);
+  totalElement.textContent = formatMoney(total);
+}
+
 function renderCartItems() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const container = document.querySelector(".cart-items");
@@ -22,6 +49,7 @@ function renderCartItems() {
   const html = cart.map(generateCartItemHtml).join("");
   container.innerHTML = html;
 
+  renderOrderSummary(cart);
   setupRemoveButtons();
 }
 
@@ -42,7 +70,6 @@ function setupRemoveButtons() {
 
       // თავიდან გამოიძახე UI განახლებისთვის
       renderCartItems();
-      setupRemoveButtons(); // ხელახლა დავაბინდოთ ღილაკები
     });
   });
 }

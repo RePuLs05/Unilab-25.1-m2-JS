@@ -1,7 +1,8 @@
 let productHtml = ``;
+const productList = window.shopData ? window.shopData.getProducts() : products;
 
 // Only process the first 4 products using slice(0, 4)
-products.forEach((product) => {
+productList.forEach((product) => {
   const ratingImage = `./images/rating-${
     Math.round(product.rating * 2) * 5
   }.png`;

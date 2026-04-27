@@ -1,4 +1,4 @@
-const products = [
+const defaultProducts = [
   {
     id: 1,
     img: "./images/main-page-img/T-SHIRT WITH TAPE DETAILS.png",
@@ -83,6 +83,52 @@ const products = [
   },
 ];
 
+const PRODUCTS_STORAGE_KEY = "shopco_products";
+
+function cloneDefaultProducts() {
+  return defaultProducts.map((product) => ({ ...product }));
+}
+
+function getStoredProducts() {
+  const rawValue = localStorage.getItem(PRODUCTS_STORAGE_KEY);
+  if (!rawValue) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(rawValue);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      return null;
+    }
+    return parsed;
+  } catch (error) {
+    return null;
+  }
+}
+
+function saveProducts(nextProducts) {
+  localStorage.setItem(PRODUCTS_STORAGE_KEY, JSON.stringify(nextProducts));
+}
+
+function getProducts() {
+  const storedProducts = getStoredProducts();
+  if (storedProducts) {
+    return storedProducts;
+  }
+
+  const initialProducts = cloneDefaultProducts();
+  saveProducts(initialProducts);
+  return initialProducts;
+}
+
+function resetProducts() {
+  const initialProducts = cloneDefaultProducts();
+  saveProducts(initialProducts);
+  return initialProducts;
+}
+
+const products = getProducts();
+
 const costumers = [
   {
     name: "Sarah M.",
@@ -121,3 +167,10 @@ const costumers = [
     date: "Posted on August 19, 2023",
   },
 ];
+
+window.shopData = {
+  getProducts,
+  saveProducts,
+  resetProducts,
+  getDefaultProducts: cloneDefaultProducts,
+};

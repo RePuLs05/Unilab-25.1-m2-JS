@@ -40,6 +40,7 @@ document.querySelectorAll(".js-carousel").forEach((container) => {
 const carousel = document.querySelector(".js-carousel");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
+const productList = window.shopData ? window.shopData.getProducts() : products;
 
 // Adjust based on .carousel-item width + gap (400px width + 20px gap)
 const scrollAmount = 310;
@@ -63,7 +64,7 @@ prevBtn.addEventListener("click", () => {
 let productHtml = ``;
 
 // Only process the first 4 products using slice(0, 4)
-products.slice(0, 4).forEach((product) => {
+productList.slice(0, 4).forEach((product) => {
   const ratingImage = `./images/rating-${
     Math.round(product.rating * 2) * 5
   }.png`;
@@ -116,7 +117,7 @@ document.querySelectorAll(".js-products-container").forEach((container) => {
 let topSellingHtml = ``;
 
 // Only process elements from index 4 to 7 (fifth to eighth products) using slice(4, 8)
-products.slice(4, 8).forEach((product) => {
+productList.slice(4, 8).forEach((product) => {
   const ratingImage = `./images/rating-${
     Math.round(product.rating * 2) * 5
   }.png`;
